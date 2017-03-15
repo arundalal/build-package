@@ -17,7 +17,7 @@ RUN curl -O https://storage.googleapis.com/golang/go1.5.3.linux-amd64.tar.gz \
     && tar -C /usr/local -xzf go1.5.3.linux-amd64.tar.gz
 
 COPY pip.conf /etc/pip.conf
-RUN pip install --upgrade pip 
+RUN pip install --upgrade pip
 RUN pip install virtualenv virtualenv-tools
 
 RUN echo "source /opt/rh/ruby193/enable" > /etc/profile.d/ruby193.sh
@@ -28,4 +28,4 @@ RUN source /opt/rh/ruby193/enable && gem install --no-rdoc --no-ri fpm-cookery
 RUN /usr/bin/update-ca-trust
 RUN /usr/bin/update-ca-trust enable
 
-ADD http://repo.zalando/static/.netrc /root/.netrc
+#ADD http://repo.zalando/static/.netrc /root/.netrc
